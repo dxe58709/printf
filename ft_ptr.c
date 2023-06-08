@@ -1,0 +1,49 @@
+#include "printf.h"
+
+int	count_ptr(uintptr_t n)
+{
+	int	count;
+
+	count = 0;
+	if (n == 0)
+		count = 1;
+	while (n != 0)
+	{
+		count++;
+		n /= 16;
+	}
+	return (count);
+}
+
+void	ptr_hex(uintptr_t n)
+{
+	if (n < 16)
+	{
+		if (n < 10)
+			ft_putchar(n + '0');
+		else
+		{
+			ft_putchar('a' + (n - 10));
+		}
+	}
+	else
+	{
+		ft_print_hex(n / 16);
+		ft_print_hex(n % 16);
+	}
+}
+
+void	ft_ptr(const void *ptr)
+{
+	uintptr_t	n;
+	int		count;
+
+	n = (uintptr_t)ptr;
+	count = count_ptr(n);
+	ft_putstr("0x");
+	if (count == 0)
+		ft_putchar('0');
+	else
+		ptr_hex(n);
+}
+
