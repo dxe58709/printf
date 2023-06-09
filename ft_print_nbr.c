@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/09 13:09:51 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/09 13:34:55 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int	count_digits(int n)
@@ -33,7 +45,7 @@ void	ft_putnbr(int n)
 	}
 	else if (n < 0)
 	{
-		if (n == INT_MIN)
+		if (n == "INT_MIN")
 			ft_putstr("-2147483648");
 		else
 		{
@@ -43,7 +55,7 @@ void	ft_putnbr(int n)
 	}
 }
 
-int	ft_printnbr(int n)
+int	ft_print_nbr(int n)
 {
 	int	count;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ptr.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/09 13:10:15 by nsakanou          #+#    #+#             */
+/*   Updated: 2023/06/09 20:06:39 by nsakanou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "printf.h"
 
 int	count_ptr(uintptr_t n)
@@ -22,9 +34,7 @@ void	ptr_hex(uintptr_t n)
 		if (n < 10)
 			ft_putchar(n + '0');
 		else
-		{
 			ft_putchar('a' + (n - 10));
-		}
 	}
 	else
 	{
@@ -36,7 +46,7 @@ void	ptr_hex(uintptr_t n)
 void	ft_ptr(const void *ptr)
 {
 	uintptr_t	n;
-	int		count;
+	int			count;
 
 	n = (uintptr_t)ptr;
 	count = count_ptr(n);
@@ -46,4 +56,3 @@ void	ft_ptr(const void *ptr)
 	else
 		ptr_hex(n);
 }
-

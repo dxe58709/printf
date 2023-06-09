@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/06/09 13:10:36 by nsakanou          #+#    #+#              #
+#    Updated: 2023/06/09 18:24:42 by nsakanou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -8,7 +20,7 @@ SRCS = ft_print_nbr.c \
 	ft_putchar.c \
 	ft_putstr.c \
 	ft_ptr.c \
-	ft_printf.c \
+	ft_printf.c
  
 OBJS = $(SRCS:.c=.o)
 
@@ -26,4 +38,3 @@ fclean:
 	rm -f $(NAME)
 
 re: fclean all
-
