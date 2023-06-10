@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_vdprintf(int fd, const char *fmt, va_list ap)
 {
@@ -21,7 +21,7 @@ int	ft_vdprintf(int fd, const char *fmt, va_list ap)
 	{
 		if (fmt[i] != '%')
 		{
-			ft_putchar(fd, fmt[i]);
+			return (ft_putchar(fd, fmt[i]));
 			continue ;
 		}
 		i++;
@@ -32,7 +32,7 @@ int	ft_vdprintf(int fd, const char *fmt, va_list ap)
 		else if (fmt[i] == 's')
 			return (ft_putstr(fd, va_arg(ap, const char *)));
 		else if (fmt[i] == 'u')
-			return (ft_print_unbr(va_arg(ap, unsigned int)));
+			return (ft_print_unbr(fd, va_arg(ap, unsigned int)));
 		else if (fmt[i] == 'x')
 			return (ft_print_hex(fd, va_arg(ap, unsigned int)));
 		else if (fmt[i] == 'X')
@@ -44,13 +44,13 @@ int	ft_vdprintf(int fd, const char *fmt, va_list ap)
 		else if (fmt[i] == 'i')
 			return (ft_print_nbr(va_arg(ap, int)));
 	}
-	return (count);
+	return (0);
 }
 
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	ap;
-	int		count;
+	ssize_t	count;
 
 	va_start(ap, fmt);
 	count = ft_vdprintf(STDOUT_FILENO, fmt, ap);

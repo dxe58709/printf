@@ -18,12 +18,12 @@
 # include <limits.h>
 # include <stdint.h>
 
-int		ft_printf(int fd, const char *fmt, ...);
-int		ft_print_unbr(unsigned int n);
+int		ft_printf(const char *fmt, ...);
+int		ft_print_unbr(int fd, unsigned int n);
 int		ft_print_nbr(int n);
-void	ft_print_hex(unsigned int n, const char format);
-void	ft_ptr(const void *ptr);
-void	ft_putchar(int fd, char c);
-void	ft_putstr(int fd, const char *s);
+int	ft_print_hex(unsigned int n, const char format);
+int	ft_ptr(const void *ptr);
+ssize_t	ft_putchar(int fd, char c);
+ssize_t	ft_putstr(int fd, const char *str);
 
 #endif

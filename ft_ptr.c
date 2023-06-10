@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	count_ptr(uintptr_t n)
 {
@@ -29,30 +29,37 @@ int	count_ptr(uintptr_t n)
 
 void	ptr_hex(uintptr_t n)
 {
+	int	fd;
+
+	fd = 0;
 	if (n < 16)
 	{
 		if (n < 10)
-			ft_putchar(n + '0');
+			ft_putchar(fd, n + '0');
 		else
-			ft_putchar('a' + (n - 10));
+			ft_putchar(fd, 'a' + (n - 10));
 	}
 	else
 	{
-		ft_print_hex(n / 16);
-		ft_print_hex(n % 16);
+		ft_print_hex(fd, n / 16);
+		ft_print_hex(fd, n % 16);
 	}
 }
 
-void	ft_ptr(const void *ptr)
+int	ft_ptr(const void *ptr)
 {
 	uintptr_t	n;
 	int			count;
+	int	fd;
 
+	fd = 0;
 	n = (uintptr_t)ptr;
 	count = count_ptr(n);
-	ft_putstr("0x");
+	ft_putstr(fd, "0x");
 	if (count == 0)
-		ft_putchar('0');
+		ft_putchar(fd, '0');
 	else
 		ptr_hex(n);
+	return (count);
 }
+

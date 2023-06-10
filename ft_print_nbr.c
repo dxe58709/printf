@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	count_digits(int n)
 {
@@ -36,20 +36,23 @@ int	count_digits(int n)
 
 void	ft_putnbr(int n)
 {
+	int	fd;
+
+	fd = 0;
 	if (n >= 0 && n <= 9)
-		ft_putchar(n + '0');
+		ft_putchar(fd, n + '0');
 	else if (10 <= n)
 	{
 		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
+		ft_putchar(fd, n % 10 + '0');
 	}
 	else if (n < 0)
 	{
-		if (n == "INT_MIN")
-			ft_putstr("-2147483648");
+		if (n == INT_MIN)
+			ft_putstr(fd, "-2147483648");
 		else
 		{
-			ft_putchar('-');
+			ft_putchar(fd, '-');
 			ft_putnbr(-n);
 		}
 	}
