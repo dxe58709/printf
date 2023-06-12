@@ -25,8 +25,8 @@ int	ft_judge_format(int fd, const char *fmt, va_list ap, ssize_t count)
 		count += ft_putstr(fd, va_arg(ap, const char *));
 	else if (fmt[i] == 'u')
 		count += ft_print_unbr(fd, va_arg(ap, unsigned int));
-	// else if (fmt[i] == 'x' || fmt[i] == 'X')
-	// 	count += ft_print_hex(fd, va_arg(ap, unsigned int));
+	else if (fmt[i] == 'x' || fmt[i] == 'X')
+		count += ft_print_hex(fd, va_arg(ap, unsigned int));
 	else if (fmt[i] == 'd' || fmt[i] == 'i')
 		count += ft_print_nbr(va_arg(ap, int));
 	// else if (fmt[i] == 'p')
@@ -34,7 +34,7 @@ int	ft_judge_format(int fd, const char *fmt, va_list ap, ssize_t count)
 	return (count);
 }
 
-int	fmt_output(int fd, const char *fmt, va_list ap)
+int	fmt_count(int fd, const char *fmt, va_list ap)
 {
 	ssize_t	i;
 	ssize_t	count;
@@ -63,26 +63,26 @@ int	ft_printf(const char *fmt, ...)
 	ssize_t	count;
 
 	va_start(ap, fmt);
-	count = fmt_output(STDOUT_FILENO, fmt, ap);
+	count = fmt_count(STDOUT_FILENO, fmt, ap);
 	va_end(ap);
 	return (count);
 }
 
-// #include <stdio.h>
+ #include <stdio.h>
 
-// int	main()
-// {
-// 	int	count1;
-// 	int	count2;
-// 	int	x = -100;
-// 	// int	num = 42;
-// 	// int	*ptr = &num;
+ int	main()
+ {
+ 	int	count1;
+ 	int	count2;
+ 	int	x = -100;
+ 	// int	num = 42;
+ 	// int	*ptr = &num;
 
-// 	// count1 = printf("%p\n", (void *)ptr);
-// 	// count2 = ft_printf("%p\n", (void *)ptr);
+ 	// count1 = printf("%p\n", (void *)ptr);
+ 	// count2 = ft_printf("%p\n", (void *)ptr);
 
-// 	count1 = printf("%d\n", x);
-// 	count2 = ft_printf("%d\n", x);
-// 	printf("%d\n", count1);
-// 	printf("%d\n", count2);
-// }
+ 	count1 = printf("%x\n", x);
+ 	count2 = ft_printf("%x\n", x);
+ 	printf("%d\n", count1);
+ 	printf("%d\n", count2);
+ }

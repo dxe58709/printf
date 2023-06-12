@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:43 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/12 17:14:31 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/12 22:22:36 by N                ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_print_hex(unsigned int n, const char fmt)
 	if (n == 0)
 	{
 		ft_puthex(n, fmt);
-		count++;
+		count = 1;
 	}
 	else
 	{
@@ -65,4 +65,12 @@ int	ft_print_hex(unsigned int n, const char fmt)
 		count += count_hex(n);
 	}
 	return (count);
+}
+
+#include <stdio.h>
+int	main()
+{
+	unsigned int	n = 12345;
+	const char	fmt = 'x';
+	printf("%d\n", ft_print_hex(n, fmt));
 }
