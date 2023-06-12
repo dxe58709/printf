@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:43 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/09 13:40:19 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:14:31 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ int	ft_print_hex(unsigned int n, const char fmt)
 	count = 0;
 	if (n == 0)
 	{
-		ft_puthex(0,fmt);
+		ft_puthex(n, fmt);
 		count++;
 	}
 	else
 	{
-		ft_puthex(n ,fmt);
+		ft_puthex(n, fmt);
 		count += count_hex(n);
 	}
 	return (count);

@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:10:21 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/09 19:57:14 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:57:54 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ ssize_t	ft_putstr(int fd, const char *str)
 	}
 	return (count);
 }
-

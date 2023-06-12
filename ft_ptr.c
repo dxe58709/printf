@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:10:15 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/09 20:06:39 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:57:44 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_ptr(const void *ptr)
 {
 	uintptr_t	n;
 	int			count;
-	int	fd;
+	int			fd;
 
 	fd = 0;
 	n = (uintptr_t)ptr;
