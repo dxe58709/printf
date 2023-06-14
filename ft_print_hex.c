@@ -6,7 +6,7 @@
 /*   By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:43 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/12 22:22:36 by N                ###   ########.fr       */
+/*   Updated: 2023/06/14 15:56:57 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,34 @@ int	count_hex(unsigned int n)
 	return (count);
 }
 
-void	ft_puthex(unsigned int n, const char format)
+int	ft_puthex(unsigned int n, const char format)
 {
 	int	fd;
+	int	count;
 
 	fd = 0;
+	count = 0;
 	if (n < 16)
 	{
 		if (n < 10)
-			ft_putchar(fd, n + '0');
-		else
-		{
-			if (format == 'x')
-				ft_putchar(fd, 'a' + (n - 10));
-			if (format == 'X')
-				ft_putchar(fd, 'A' + (n - 10));
-		}
+			count += ft_putchar(fd, n + '0');
+		else if (format == 'x')
+			count += ft_putchar(fd, 'a' + (n - 10));
+		else if (format == 'X')
+			count += ft_putchar(fd, 'A' + (n - 10));
 	}
 	else
 	{
-		ft_print_hex(n / 16, format);
-		ft_print_hex(n % 16, format);
+		count += ft_puthex(n / 16, format);
+		if (format == 'x')
+			count += ft_putchar(fd, 'a' + (n % 16));
+		else if (format == 'X')
+			count += ft_putchar(fd, 'A' + (n % 16));
 	}
+	count += count_hex(n);
+	return (count);
 }
-
+/*
 int	ft_print_hex(unsigned int n, const char fmt)
 {
 	int	count;
@@ -65,12 +69,5 @@ int	ft_print_hex(unsigned int n, const char fmt)
 		count += count_hex(n);
 	}
 	return (count);
-}
+}*/
 
-#include <stdio.h>
-int	main()
-{
-	unsigned int	n = 12345;
-	const char	fmt = 'x';
-	printf("%d\n", ft_print_hex(n, fmt));
-}
