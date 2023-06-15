@@ -25,34 +25,27 @@ int	count_hex(unsigned int n)
 	return (count);
 }
 
-int	ft_puthex(unsigned int n, const char format)
+void	ft_puthex(unsigned int n, const char fmt)
 {
 	int	fd;
-	int	count;
 
 	fd = 0;
-	count = 0;
 	if (n < 16)
 	{
 		if (n < 10)
-			count += ft_putchar(fd, n + '0');
-		else if (format == 'x')
-			count += ft_putchar(fd, 'a' + (n - 10));
-		else if (format == 'X')
-			count += ft_putchar(fd, 'A' + (n - 10));
+			ft_putchar(fd, n + '0');
+		else if (fmt == 'x')
+			ft_putchar(fd, 'a' + (n - 10));
+		else if (fmt == 'X')
+			ft_putchar(fd, 'A' + (n - 10));
 	}
 	else
 	{
-		count += ft_puthex(n / 16, format);
-		if (format == 'x')
-			count += ft_putchar(fd, 'a' + (n % 16));
-		else if (format == 'X')
-			count += ft_putchar(fd, 'A' + (n % 16));
+		ft_puthex(n / 16, fmt);
+		ft_puthex(n % 16, fmt);
 	}
-	count += count_hex(n);
-	return (count);
 }
-/*
+
 int	ft_print_hex(unsigned int n, const char fmt)
 {
 	int	count;
@@ -69,5 +62,5 @@ int	ft_print_hex(unsigned int n, const char fmt)
 		count += count_hex(n);
 	}
 	return (count);
-}*/
+}
 

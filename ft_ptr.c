@@ -17,8 +17,6 @@ int	count_ptr(uintptr_t n)
 	int	count;
 
 	count = 0;
-	if (n == 0)
-		count = 1;
 	while (n != 0)
 	{
 		count++;
@@ -27,39 +25,37 @@ int	count_ptr(uintptr_t n)
 	return (count);
 }
 
-void	ptr_hex(uintptr_t n)
+void	ptr_puthex(int fd, uintptr_t n)
 {
-	int	fd;
-
-	fd = 0;
-	if (n < 16)
+	if (n < 16) //1桁の場合
 	{
 		if (n < 10)
 			ft_putchar(fd, n + '0');
 		else
 			ft_putchar(fd, 'a' + (n - 10));
 	}
-	else
+	else //2桁以上の場合
 	{
-		ft_print_hex(fd, n / 16);
-		ft_print_hex(fd, n % 16);
+		ptr_puthex(fd, n / 16);
+		ptr_puthex(fd, n % 16);
 	}
 }
 
 int	ft_ptr(const void *ptr)
 {
-	uintptr_t	n;
 	int			count;
 	int			fd;
 
 	fd = 0;
-	n = (uintptr_t)ptr;
-	count = count_ptr(n);
-	ft_putstr(fd, "0x");
-	if (count == 0)
-		ft_putchar(fd, '0');
+	count = 0;
+	count += ft_putstr(fd, "0x");
+	if (ptr == NULL)
+		count += ft_putchar(fd, '0');
 	else
-		ptr_hex(n);
+	{
+		ptr_puthex(fd, (uintptr_t)ptr);
+		count += count_ptr((uintptr_t)ptr);
+	}
 	return (count);
 }
 
