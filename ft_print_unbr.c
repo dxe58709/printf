@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:55 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/09 20:01:37 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:26:26 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	count_udigits(unsigned int n)
 
 	count = 0;
 	if (n == 0)
-		count = 1;//1桁分
+		count = 1;
 	while (n > 0)
 	{
 		count++;
@@ -55,4 +55,3 @@ int	ft_print_unbr(int fd, unsigned int n)
 	}
 	return (count);
 }
-

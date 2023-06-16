@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:10:03 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/14 15:10:27 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:37:49 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,3 @@ int	ft_printf(const char *fmt, ...)
 	va_end(ap);
 	return (count);
 }
-/*
- #include <stdio.h>
-
- int	main()
- {
- 	int	count1;
- 	int	count2;
- //	int	x = -100;
- 	 int	num = 42;
- 	 int	*ptr = &num;
-
- 	 count1 = printf("%p\n", (void *)ptr);
- 	 count2 = ft_printf("%p\n", (void *)ptr);
-
- //	count1 = printf("%x\n", x);
- //	count2 = ft_printf("%x\n", x);
- 	printf("%d\n", count1);
- 	printf("%d\n", count2);
- }*/

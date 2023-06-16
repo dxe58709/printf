@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: N <nsakanou@student.42tokyo.jp>            +#+  +:+       +#+        */
+/*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:43 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/14 15:56:57 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:26:07 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_puthex(unsigned int n, const char fmt)
 {
 	int	fd;
 
-	fd = 0;
+	fd = 1;
 	if (n < 16)
 	{
 		if (n < 10)
@@ -63,4 +63,3 @@ int	ft_print_hex(unsigned int n, const char fmt)
 	}
 	return (count);
 }
-

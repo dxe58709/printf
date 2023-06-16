@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:09:51 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/14 15:57:00 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/16 14:29:48 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ int	count_digits(int n)
 
 	count = 0;
 	if (n == 0)
-		count = 1;//1桁分
+		count = 1;
+	if (n == INT_MIN)
+		return (11);
 	else if (n < 0)
 	{
-		count = 1;//マイナス
-		n = -n;//絶対値を取得
+		count = 1;
+		n = -n;
 	}		
 	while (n > 0)
 	{
@@ -32,13 +34,11 @@ int	count_digits(int n)
 	return (count);
 }
 
-
-
 void	ft_putnbr(int n)
 {
 	int	fd;
 
-	fd = 0;
+	fd = 1;
 	if (n >= 0 && n <= 9)
 		ft_putchar(fd, n + '0');
 	else if (10 <= n)
@@ -75,4 +75,3 @@ int	ft_print_nbr(int n)
 	}
 	return (count);
 }
-
