@@ -6,7 +6,7 @@
 /*   By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 13:10:03 by nsakanou          #+#    #+#             */
-/*   Updated: 2023/06/16 14:37:49 by nsakanou         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:17:55 by nsakanou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ int	fmt_count(int fd, const char *fmt, va_list ap)
 		{
 			i++;
 			count = ft_judge_format(fd, &fmt[i], ap, count);
-			i++;
-			continue ;
+			// i++;
+			// continue ;
+			//ft_judge_formatじゃない文字が来たとき読み込みをやめる処理(未定義)
 		}
 		else
 			count += ft_putchar(fd, fmt[i]);

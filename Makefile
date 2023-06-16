@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/09 13:10:36 by nsakanou          #+#    #+#              #
-#    Updated: 2023/06/09 18:24:42 by nsakanou         ###   ########.fr        #
+#    Updated: 2023/06/16 17:12:41 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(NAME) : $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-fclean:
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
