@@ -6,7 +6,7 @@
 #    By: nsakanou <nsakanou@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/09 13:10:36 by nsakanou          #+#    #+#              #
-#    Updated: 2023/07/02 12:23:09 by nsakanou         ###   ########.fr        #
+#    Updated: 2024/01/24 21:02:28 by nsakanou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_print_nbr.c \
-	ft_print_unbr.c \
-	ft_print_hex.c \
-	ft_putchar.c \
-	ft_putstr.c \
-	ft_ptr.c \
-	ft_printf.c
+SRCS =  srcs/ft_print_nbr.c \
+	srcs/ft_printf.c \
+	srcs/ft_ptr.c \
+	srcs/ft_print_unbr.c \
+	srcs/ft_putchar.c \
+	srcs/ft_putstr.c \
+	srcs/ft_print_hex.c 
  
 OBJS = $(SRCS:.c=.o)
 
