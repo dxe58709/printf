@@ -12,7 +12,7 @@ First, clone this repository and `cd` into it:
 
 ```zsh
 #!/bin/zsh
-git clone https://github.com/riceset/printf; cd ft_printf
+git clone https://github.com/dxe58709/printf; cd ft_printf
 ```
 
 Compile the library with:
